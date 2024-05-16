@@ -1,13 +1,118 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outgit", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+boy,
+#root,
+.App {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  background-color: rgb(210, 210, 210);
+}
+
+.icon {
+  position: absolute;
+  z-index: 4;
+  left: 1%;
+  width: fit-content;
+  height: 44px;
+  cursor: pointer;
+}
+
+.hamburguer {
+  top: 50%;
+  left: 10%;
+  width: 30px;
+  height: 6px;
+  background-color: #ff3300;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.hamburguer::before {
+  top: -12px;
+  content: "";
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  background-color: #ff3300;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.hamburguer::after {
+  top: 12px;
+  content: "";
+  position: absolute;
+  width: 37px;
+  height: 6px;
+  background-color: #ff3300;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  left: 1%;
+  padding: 45px 0 0;
+  flex-wrap: nowrap;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.list .listItens {
+  padding: 25px;
+  list-style: none;
+}
+
+.list .listItens li {
+  margin: 20px 0px;
+  cursor: pointer;
+}
+
+.list .listItens li:hover {
+  font-weight: 700;
+}
+
+.icon.iconActive .hamburguer {
+  background: transparent;
+  box-shadow: 0 2px 5px transparent;
+  /* margin: 10px; */
+}
+
+.icon.iconActive .hamburguer:after {
+  top: 0;
+  background: #fff;
+  transform: rotate(225deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon.iconActive .hamburguer:before {
+  top: 0;
+  background: #fff;
+  transform: rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu.menuOpen{
+  width: 220px;
+  height: 100vh;
+  background: #ff3300;
+  box-shadow: 10px 0px 69px 0px rgba(0, 0, 0, 0.59);
+}
+
+.menu.menuClose{
+  display: none;
+  width: 0px;
 }
